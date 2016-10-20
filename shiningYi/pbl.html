@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>写意项目练习</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet/less" type="text/css" href="css/pblstyle.less"/>
+		<link rel="stylesheet/less" type="text/css" href="css/headfoot.less"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" href="css/swiper.min.css"/>
+		<script type="text/javascript" src="js/less.js"></script>
+	</head>
+	<body>
+		<div id="homebox">
+			<div id="nav">
+				<div id="head">
+					<a href="#" class="logo"><img src="img/home/shininglogo.png"/></a>
+					<div id="abq">
+						<a href="enjoyableHome.html" class="log1" style="margin-left:0">Home</a>
+						<a href="enjoyableAbout.html" class="log2">About</a>
+						<a href="Rendering.html" class="log3" style="color:white">Rendering</a>
+						<a href="3D Animation.html" class="log4">3D&nbsp;Animation</a>
+						<a href="enjoyableBim.html" class="log5">Bim</a>
+						<a href="enjoyableContact.html" class="log6">Contact</a>
+					</div>
+				</div>
+				<div id="picture">
+					<img src="img/home/nav.png"/>
+				</div>
+			</div>
+			<div id="renderingmiddle">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/rendering/images/Banner (1).jpg"/></div>
+						<div class="swiper-slide"><img src="img/rendering/images/Banner (2).jpg"/></div>
+						<div class="swiper-slide"><img src="img/rendering/images/Banner (3).jpg"/></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div id="waterfall">
+					
+				</div>
+			</div>
+			<div id="bottom">
+				<p class="p1"><a href="#" class="small"><img src="img/home/mail.jpg"/></a></p>
+				<p class="p2">
+					<a href="" class="small"><img src="img/home/facebook.jpg"/></a>
+					<a href="" class="small"><img src="img/home/youtube.jpg"/></a>
+					<a href="" class="small"><img src="img/home/linkedln.jpg"/></a>
+					<a href="" class="small"><img src="img/home/twitter.jpg"/></a>
+				</p>
+				<p class="p3">Copyright&nbsp; ©&nbsp; 1998-2015 &nbsp;shining &nbsp;Group</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript" src="js/swiper.animate.min.js"></script>-->
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/lasthover.js"></script>
+	<script type="text/javascript">
+		var swiper=new Swiper('.swiper-container',{
+			pagination: '.swiper-pagination',
+			slidesPerView: '1',
+			paginationClickable: true,
+			autoplay:2000,
+			loop:true,
+		});
+		
+		var waterfall = document.getElementById('waterfall');
+		function random(min,max){
+			return parseInt(Math.random()*(max-min))+min;
+		}
+		
+		var heights=[];
+		var arr=[];
+		var cols;
+		var rightMargin=1;
+		var maxCol;
+		function setLi(isFirst){
+			var ul=document.createElement('ul');
+			var lis=document.getElementsByTagName('li');
+			// 确定页面的列数
+			var sightWidth = document.documentElement.clientWidth;
+			if (sightWidth>550) {
+				 cols=4;
+				 width=23.75;
+			} else{
+				 cols=2;
+				 width=48.5;
+			}
+			// 设置ul的宽度
+			var colHeights=[];
+			for(var i=0;i<cols;i++){
+				colHeights[i]=0;
+			}
+			
+			function creatLi(index){
+				//产生85 个随机数
+//				for(var i=1;i<85;i++){
+					var differentnumArr=[];
+					for(var j=0;j<85;j++){
+						var randomnum=random(1,85);
+						if(randomnum!=differentnumArr[j]){
+							differentnumArr.push(randomnum);
+						}else{
+							j=j-1;
+						}
+					}
+					
+//					alert(index)
+					// 创建li 和 img
+					var li=lis[index]||document.createElement('li');
+					if(isFirst){
+						var img=document.createElement('img');
+						img.src='img/rendering/images/'+differentnumArr[j-1]+'.jpg';
+						img.className="bgpic";
+						li.appendChild(img);
+						var bgcolordiv=document.createElement('div');
+						var img1=document.createElement('img');
+						img1.src='img/rendering/images/fangda.png';
+						img1.className="fangda";
+						bgcolordiv.appendChild(img1);
+						li.appendChild(bgcolordiv);
+					}
+					
+					li.style.width=width+'%';
+					
+					var h=heights[index]||random(100,400);
+					li.style.height=h+'px';
+					
+					if(isFirst){
+						heights.push(h);
+					}
+	//				
+					var minCol=colHeights[0];
+					var minIndex=0;
+					for(var k=0;k<cols;k++){
+						if(minCol>colHeights[k]){
+							minCol=colHeights[k];
+							minIndex=k;
+						}
+					}
+//					alert(minIndex)
+					// 设置li相对于ul的top、left
+					li.style.left=minIndex*(width+rightMargin)+'%';
+					li.style.top=minCol+'px';
+//					alert(minCol);
+					colHeights[minIndex]+=(h+5);
+					if(isFirst){
+						ul.appendChild(li);
+					}
+					
+					if(isFirst){waterfall.appendChild(ul);}
+					
+					maxCol=colHeights[0];
+					
+					for(var l=0;l<cols;l++){
+						if(maxCol<colHeights[l]){
+							maxCol=colHeights[l];
+							//maxIndex=l;
+						}
+					}
+			}
+			for(var i=0;i<84;i++){
+				creatLi(i);
+			}
+			ul.style.height=maxCol+'px';
+		}
+		
+		setLi(true);
+		for(var i=0;i<$('li').length;i++){
+			$('li:eq('+i+')').mouseenter(function(){
+				
+				$(this.children[1]).fadeIn('slow');
+			});
+			$('li:eq('+i+')').mouseleave(function(){
+				$(this.children[1]).fadeOut('slow');
+			});
+		}
+		window.onresize=function(){
+			setLi(false);
+		};
+	
+	</script>
+</html>
+
+
+	<!--var differentnumArr=[];
+	for(var j=0;j<85;j++){
+		var randomnum=random(1,85);
+		if(randomnum!=differentnumArr[j]){
+			differentnumArr.push(randomnum);
+		}else{
+			j=j-1;
+		}
+	}-->
+		
+		<!--var randomnum=random(1,85);
+		if(arr.length==0){
+			arr.push(randomnum);
+		}else{
+			for(var j=0;j<arr.length;j++){
+				if(randomnum!=arr[j]){
+					arr.push(randomnum);
+				}else{
+					j=j-1;
+				}
+			}
+		}-->
+	
