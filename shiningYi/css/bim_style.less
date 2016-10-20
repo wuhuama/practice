@@ -1,0 +1,409 @@
+//混合居中
+#centered{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+@grayColor:#616161;
+//标号混合
+#number{
+    display: inline-block;
+    border: 1px solid #616161;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    color: @grayColor;
+}
+//标题混合
+#tittle{
+    display: inline-block;
+    color: @grayColor;
+    margin-left: 0.1%;
+}
+//文字(小字)混合
+#typeFace{
+    font-size: 15px;
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+#header{
+    position: fixed;
+    z-index: 100;
+}
+#center{
+    width: 100%;
+    position: relative;
+    #build1_wrap{
+        width: 100%;
+        background: #e5e5e5;
+    }
+    #build2_wrap{
+        width: 100%;
+        background: #fff;
+    }
+    #build3_wrap{
+        width: 100%;
+        background: #e5e5e5;
+    }
+    #build4_wrap{
+        width: 100%;
+        background: #FFF;
+        
+    }
+    #build5_wrap{
+        width: 100%;
+        background: #e5e5e5;
+    }
+}
+@media screen and (min-width: 640px){
+    #center{
+        #build1_wrap{
+            #build1{
+                #centered;
+                height: 485px;
+                padding-top: 180px;
+                .text1{
+                    position: absolute;
+                    left: 0;
+                    width: 400px;
+                    font-size: 18px;
+                    overflow: hidden;
+                    span{#number;}
+                    h3{#tittle;}
+                    p{#typeFace;}
+                    img{
+                        margin-top: 20px;
+                        width: 28%;
+                        float: left;
+                        //消除图片之间的间隙
+                    }  
+                }
+                .building1_0{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 350px;
+                }
+            }
+        }
+        #build2_wrap{
+            #build2{
+                #centered;
+                height: 485px;
+                padding-bottom: 30px;
+                .text2{
+                    position: absolute;
+                    left: 0;
+                    top: 100px;
+                    z-index: 2;
+                    width: 400px;
+                    span{#number;}
+                    h3{#tittle;}
+                    p{#typeFace;}
+                    img{
+                        margin-top: 20px;
+                        width: 45%;
+                        margin-left: 0.5%;
+                        //图片之间的间隙
+                    }  
+                }
+                .building1_1{
+                    position: absolute;
+                    right: 45px;
+                    top: 0;
+                    width: 350px;
+                    z-index: 1;
+                }
+            }
+        }
+        #build3_wrap{
+            #build3{
+                #centered;
+                height: 485px;
+                padding: 25px 0 0;
+                .text3{
+                    position: absolute;
+                    left: 40%;
+                    top: 100px;
+                    z-index: 2;
+                    font-family: arial;
+                    span{#number;}
+                    h3{#tittle;}
+                    p{
+                        #typeFace; 
+                        width: 60%;
+                        word-break: break-all; 
+                    }
+                    img{
+                        margin-top: 20px;
+                        width: 34%;
+                        margin-left: 0.5%;
+                        //图片之间的间隙
+                    }  
+                }
+                .building2_0{
+                    position: absolute;
+                    left: 0;
+                    width: 350px;
+                }
+            }
+        }
+        
+        #build4_wrap{
+            #build4{
+                #centered;
+                height: 573px;
+                .text4{
+                    position: absolute;
+                    left: 150px;
+                    top: 150px;
+                    z-index: 1;
+                    font-family: arial;
+                    span{
+                        #number;
+                    }
+                    h3{
+                        #tittle;
+                    }
+                    p{
+                      #typeFace;
+                      width: 350px;
+                    }
+                    img{
+                        margin-bottom: 10px;
+                        width: 60%;
+                        display: block;
+                    }  
+                }
+                .building2_1{
+                    position: absolute;
+                    left: 45px;
+                    width: 350px;
+                }
+                .building3_0{
+                    position: absolute;
+                    right: 0;
+                    top: 70px;
+                    width: 350px;
+                }
+            }
+        }
+        #build5_wrap{
+            #build5{
+                #centered;
+                height: 485px;
+                padding-top: 80px;
+                .text5{
+                    position: absolute;
+                    left: 0;
+                    top: 200px;
+                    z-index: 2;
+                    width: 400px;
+                    font-size: 18px;
+                    span{
+                        #number;
+                    }
+                    h3{
+                       #tittle;
+                    }
+                    p{
+                      #typeFace;  
+                    }
+                    
+                }
+                .building3_1{
+                    position: absolute;
+                    right: 50px;
+                    top: 0;
+                    width: 350px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 639px){
+    #center{
+        width: 100%;
+        position: relative;
+        #build1{
+            width: 100%;
+            height: 419px;
+            padding-top: 140px;
+            .text1{
+                position: absolute;
+                left: 0;
+                width: 60%;
+                overflow: hidden;
+                span{
+                    #number;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                }
+                h3{
+                   #tittle;
+                }
+                p{
+                  #typeFace;  
+                }  
+                img{
+                    margin-top: 10px;
+                    width: 28%;
+                    float: left;
+                }  
+            }
+            .building1_0{
+                position: absolute;
+                right: -60px;
+                width: 300px;
+            }
+        }
+        #build2{
+            width: 100%;
+            height: 580px;
+            .text2{
+                position: absolute;
+                left: 0;
+                width: 90%;
+                overflow: hidden;
+                z-index: 4;
+                padding-top: 40px;
+                font-size: 14px;
+                span{
+                    #number;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                }
+                h3{
+                   #tittle;
+                }
+                p{
+                  #typeFace;  
+                }  
+                img{
+                    margin-top: 10px;
+                    width: 40%;
+                    margin-left: 3px;
+                    float: left;
+                }  
+            }
+            .building1_1{
+                position: absolute;
+                right: -21px;
+                width: 300px;
+            }
+        }
+        #build3{
+            width: 100%;
+            height: 415px;
+            padding-top: 40px;
+            .text3{
+                position: absolute;
+                right: 0;
+                width: 65%;
+                overflow: hidden;
+                z-index: 4;
+                padding-top: 80px;
+                font-size: 14px;
+                word-break: break-all;
+                span{
+                    #number;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                }
+                h3{
+                   #tittle;
+                }
+                p{
+                  #typeFace;  
+                }  
+                img{
+                    margin-top: 10px;
+                    width: 40%;
+                    margin-left: 3px;
+                    float: left;
+                }  
+            }
+            .building2_0{
+                position: absolute;
+                left: -80px;
+                width: 300px;
+            }
+        }
+        #build4{
+            width: 100%;
+            height: 430px;
+            .text4{
+                position: absolute;
+                left: 10%;
+                width: 65%;
+                overflow: hidden;
+                z-index: 4;
+                padding-top: 80px;
+                font-size: 14px;
+                word-break: break-all;
+                span{
+                    #number;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                }
+                h3{
+                   #tittle;
+                }
+                p{
+                  #typeFace;  
+                }  
+                img{
+                    margin-top: 10px;
+                    width: 40%;
+                    margin-left: 3px;
+                    float: left;
+                }  
+            }
+            .building2_1{
+                position: absolute;
+                left: -40px;
+                width: 300px;
+            }
+            .building3_0{
+                position: absolute;
+                right: -40px;
+                width: 300px;
+            }
+        }
+        #build5{
+            width: 100%;
+            height: 420px;
+            .text5{
+                position: absolute;
+                left: 0;
+                width: 65%;
+                overflow: hidden;
+                z-index: 4;
+                padding-top: 80px;
+                font-size: 14px;
+                word-break: break-all;
+                span{
+                    #number;
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                }
+                h3{
+                   #tittle;
+                }
+                p{
+                  #typeFace;  
+                }  
+                
+            }
+            .building3_1{
+                position: absolute;
+                right: 3px;
+                width: 300px;
+            }
+        }
+    }
+} 

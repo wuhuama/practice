@@ -1,0 +1,126 @@
+
+@media screen and (min-width: 640px){
+    @left:left;
+    @right:right; //其实没必要写变量
+    //混合banner（1）
+    #banner{
+        border-bottom: 1px solid #e1e1e1;
+        overflow: hidden;
+        img{
+            width: 600px;
+            background: white;
+        }
+        .jump{
+            display: inline-block;
+            height: 100%;
+            width: 360px;
+            color: black;
+            background: white;
+            font-size: 16px;
+            line-height: 36.7px;
+            
+            span{
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 50px;
+            }
+        }
+    }
+    
+    //中部
+    #center{
+        width: 100%;
+        #center_cont{
+            width: 1000px;
+            margin: 0 auto;
+            background: white;
+            #banner1{
+               #banner;
+               img{
+                   float: @left;
+                   height: 160px;
+               }
+               .jump{
+                    float: @left;
+                    text-align: left;
+                    height: 160px;
+                    padding-left: 20px;
+                    border-left: 20px solid gray;
+               }
+            }
+            #banner2{
+                #banner;
+                img{
+                    float: @right;
+                    height: 160px;
+                }
+                .jump{
+                    float: left;
+                    text-align: right;
+                    padding-right: 20px;
+                    border-right: 20px solid gray;
+                    height: 160px;
+                }
+            }
+            #banner3{
+                #banner;
+                img{
+                    float: @left;
+                    height: 160px;
+                }
+                .jump{
+                    float: left;
+                    text-align: left;
+                    padding-left: 20px;
+                    border-left: 20px solid gray;
+                    height: 160px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:640px){
+    //混合banner（2）
+    #banner_r{
+            border-bottom: 1px solid #e1e1e1;
+            img{
+                width: 100%;
+//              height: 120px;
+            }
+            .jump{
+                width: 100%;
+                color: black;
+                margin-bottom: 20px;
+                span{
+                    width: 100%;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+    #center{
+        width: 100%;
+         #center_cont{
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            #banner1{
+                width: 100%;
+                #banner_r;
+            }
+            #banner2{
+                width: 100%;
+                #banner_r;
+            }
+            #banner3{
+                width: 100%;
+                #banner_r;
+            }
+        }
+    }
+}
+
+

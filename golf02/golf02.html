@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>golf02</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	html,body{
+    		height: 100%;
+    	}
+    	.swiper-container{
+    		width: 100%;
+    		height: 100%;
+    	}
+    	.swiper-slide{
+			background-size: 100% 100%;
+			position: relative;
+    	}
+    	.header{
+    		width: 100%;
+    		height: 8%;
+    		position: relative;
+    		top: 1%;
+    	}
+    	.img_left1{
+    		width: 6%;
+    		position: absolute;
+    		left: 3%;
+    		top:7%;
+    	}
+    	.img_left2{
+    		width: 5%;
+    		position: absolute;
+    		left: 10%;
+    		top: 3%;
+    	}
+    	.img_left3{
+    		width: 15%;
+    		position: absolute;
+    		left: 17%;
+    		top: 3%;
+    	}
+    	.right1{
+    		width: 7%;
+    		position: absolute;
+    		left: 90%;
+    	}
+    	.text{
+    		position: relative;
+    		height: 35%;
+    	}
+    	.text img{
+    		display: block;
+    	}
+    	.ding{
+    		width: 37%;
+    		position: absolute;
+    		left: 22%;
+    		top: 10%;
+    		height: 25%;
+    	}
+    	.zdz{
+    		width: 63%;
+    		position: absolute;
+    		left: 22%;
+    		top: 38%;
+    		height: 30%;
+    	}
+    	.xxz{
+    		width: 62%;
+    		position: absolute;
+    		left: 22%;
+    		top: 70%;
+    		height: 20%;
+    	}
+    	.car{
+    		position: relative;
+    		height: 14%;
+    	}
+    	.scar{
+    		width: 50%;
+    		position: absolute;
+    		left: 25%;
+    		height: 90%;
+    	}
+    	.golf{
+    		position: relative;
+    		height: 9.8%;
+    	}
+    	.gf{
+    		width: 50%;
+    		position: absolute;
+    		left: 25%;
+    		height: 100%;
+    	}
+    	.bird{
+    		width: 10%;
+    		position: absolute;
+    		right: 5%;
+    		bottom: 0;
+    		height: 70%;
+    	}
+    	.bg_bu{
+    		position: relative;
+    		width: 100%;
+    		height: 37%;
+    		background-image: url(img/bu.png);
+    		background-size: 100% 100%;
+    	}
+    	.nengli{
+    		position: absolute;
+    		width: 40%;
+    		left: 30%;
+    		top: 64%;
+    		height: 15%;
+    	}
+    	.arrow1{
+    		position: absolute;
+    		width: 8%;
+    		height: 7%;
+    		top: 82%;
+    		left: 47%;
+    	}
+    	.fz_ant{
+    		height: 25%;;
+    		position: absolute;
+    		width: 48%;
+    		top: 6%;
+    		left: 30%;
+    	}
+    	.tree{
+    		position: absolute;
+    		width: 100%;
+    		height: 23%;
+    		top:42%;
+    	}
+    	.ant{
+    		width: 50%;
+    		height: 30%;
+    		position: absolute;
+    		top: 31%;
+    		left: 14%;
+    	}
+    	.carcp{
+    		width: 50%;
+    		height: 17%;
+    		position: absolute;
+    		left: 22%;
+    		top: 62%;
+    	}
+    	.zuli{
+    		width: 40%;
+    		height: 13%;
+    		position: absolute;
+    		left: 30%;
+    		top: 80%;
+    	}
+    	
+    	.fBird{
+    		position: absolute;
+    		width: 40%;
+    		height: 27%;
+    		left: 30%;
+    		top: 7%;
+    	}
+    	.flower{
+    		width: 35%;
+    		position: absolute;
+    		height: 45%;
+    		top: 30%;
+    		z-index: 1;
+    	}
+    	.flyBird{
+    		width: 73%;
+    		height: 20%;
+    		position: absolute;
+    		left: 21%;
+    		top: 36%;
+    	}
+    	.carFly{
+    		width: 50%;
+    		height: 17%;
+    		position: absolute;
+    		left: 22.5%;
+    		top: 57%;
+    	}
+    	.bSpeed{
+    		width: 40%;
+    		height: 14%;
+    		position: absolute;
+    		left: 30%;
+    		top: 78%;
+    	}
+    	.arrow2,.arrow3,.arrow4{
+    		position: absolute;
+    		width:8%;
+    		height: 3%;
+    		top: 95%;
+    		left: 47%;
+    	}
+    	.sun{
+    		position: absolute;
+    		width: 40%;
+    		height: 30%;
+    		left: 30%;
+    		top: 5%;
+    		z-index: 1;
+    	}
+    	.wildRubbit{
+    		position: absolute;
+    		width: 100%;
+    		height: 80%;
+    		top: 20%;
+    	}
+    	.rCar{
+    		width: 40%;
+    		height: 23%;
+    		position: absolute;
+    		top: 45%;
+    		left: 37%;
+    	}
+    	.rSpeed{
+    		width: 53%;
+    		height: 16%;
+    		position: absolute;
+    		left: 35%;
+    		top: 78%;
+    	}
+    	.mesForm{
+    		position: absolute;
+    		width: 100%;
+    		height: 45%;
+    		top: 34%;
+    	}
+    	.submit{
+    		position: absolute;
+    		width: 23%;
+    		left: 45%;
+    		height: 7%;
+    		top: 81%;
+    	}
+    	.special{
+    		position: absolute;
+    		left: 13%;
+    		height: 7%;
+    		top: 90%;
+    		width: 32%;
+    	}
+    	.vcr{
+    		position: absolute;
+    		right: 13%;
+    		height: 7%;
+    		top: 90%;
+    		width: 32%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="background-image: url(img/bg2.png);">
+				<div class="header ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+					<img class="img_left1" src="img/1_07.png"/>
+					<img class="img_left2" src="img/1_04.png"/>
+					<img class="img_left3" src="img/1_10.png"/>
+					<img class="right1" src="img/2_03.png"/>
+				</div>
+				<div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.7s" swiper-animate-delay="0.5s">
+					<img class="ding" src="img/ding.png"/>
+					<img class="zdz" src="img/zd.png"/>
+					<img class="xxz" src="img/xx.png"/>
+				</div>
+				<div class="car ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.7s" swiper-animate-delay="0.3s">
+					<img class="scar" src="img/car.png"/>
+				</div>
+				<div class="golf ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+					<img class="gf" src="img/gf.png"/>
+					<img class="bird ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="img/bird.png"/>
+				</div>
+				<div class="bg_bu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">
+					<img class="nengli ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s" src="img/nengli.png"/>
+					<img class="arrow1 ani" swiper-animate-effect="flash" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s" src="img/jiantou.png"/>
+				</div>
+				
+			</div>
+			<div class="swiper-slide" style="background-image: url(img/ant_bg.png);">
+				<img class="fz_ant ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/ant_fz.png"/>
+				<img class="ant" src="img/ant.png"/>
+				<img class="tree" src="img/ant_tree.png"/>
+				<img class="carcp ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s" src="img/hummingbird_car.png"/>
+				<img class="zuli ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="img/ant_zuli.png"/>
+				<img class="arrow2" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/jiantou.png"/>
+			</div>
+			<div class="swiper-slide" style="background-image: url(img/hummingbird_bg.png);">
+				<img class="fBird ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s" src="img/hummingbird_jf.png"/>
+				<img class="flower ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s" src="img/hummingbird_flower.png"/>
+				<img class="flyBird ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/hummingbird.png"/>
+				<img class="carFly ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/hummingbird_car.png"/>
+				<img class="bSpeed ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.7s" swiper-animate-delay="0.3s" src="img/hummingbird_speed.png"/>
+				<img class="arrow3 ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="img/jiantou.png"/>
+			</div>
+			<div class="swiper-slide" style="background-image: url(img/rabbit_bg.png);">
+				<img class="sun ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="img/rabbit_sun.png"/>
+				<img class="wildRubbit" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" src="img/rabbit.png"/>
+				<img class="rCar ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/rabbit_car.png"/>
+				<img class="rSpeed ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/rabbit_speed.png"/>
+				<img class="arrow4 ani" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="img/jiantou.png"/>
+			</div>
+			<div class="swiper-slide" style="background-image: url(img/fengdi_bg.png);">
+				<img class="mesForm" src="img/fengdi_mes.png"/>
+				<img class="submit ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/fengdi_submit.png"/>
+				<img class="special ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.2s" src="img/fengdi_lingdian.png"/>
+				<img class="vcr ani" swiper-animate-effect="fadeInright" swiper-animate-duration="0.2s" src="img/fengdi_tvc.png"/>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</body>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.animate.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var swiper = new Swiper(".swiper-container",{
+//		pagination:'.swiper-pagination',
+//		paginationClickable:true,
+		direction: "vertical",
+		onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+			swiperAnimateCache(swiper); //隐藏动画元素 
+		    swiperAnimate(swiper); //初始化完成开始动画
+		}, 
+		onSlideChangeEnd: function(swiper){ 
+		    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		},
+	})
+</script>
+
+</html>

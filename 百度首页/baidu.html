@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>百度首页</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 100%;
+			}
+			#bgColor{
+				width: 100%;
+				height: 100%;
+			}
+			#nav{
+				width: 100%;
+				margin-top: 10px;
+				display: flex;
+				justify-content: flex-end;
+			}
+			#nav a{
+				margin-right: 20px;
+				font-size: 14px;
+				font-weight: bold;
+				color: black;
+			}
+			#nav a:hover{
+				color: blue;
+			}
+			#nav #more{
+				width: 65px;
+				height: 21px;
+				color: #FFFFFF;
+				text-align: center;
+				background: #317ef3;
+				text-decoration: none;
+			}
+			#content{
+				width: 100%;
+				position: relative;
+			}
+			
+			#logo{
+				width: 25%;
+				margin: 20px auto;
+			}
+			#logo img{
+				width: 100%;
+			}
+			#search{
+				width: 700px;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#camera{
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				right: 108px;
+				top: 12px;
+				background: url(img/camera_new_679c15cc.png) 0 0 no-repeat;			
+			}
+			#camera:hover{
+				background: url(img/camera_new_679c15cc.png) 0 -20px no-repeat;
+			}
+			#searchText{
+				width: 600px;
+				height: 35px;
+			}
+			#search a button{
+				border: none;
+				width: 90px;
+				height: 37px;
+				line-height: 35px;
+				background: #317ef3;
+				color: white;
+				font-size: 16px;
+				margin-left:-5px ;
+			}
+			#footer{
+				width: 700px;
+				position: absolute;
+				bottom: 50px;
+				left: 50%;
+				margin-left: -347.5px;
+				display: flex;
+				justify-content: space-between;
+			}
+			#left1,#left2{
+				width: 159px;
+				margin-right:2% ;
+				position: relative;
+			}
+			#left1 .big,#left2 .big{
+				position: absolute;
+				top: 10px;
+				left: 65px;
+				font-size: 15px;
+				color: #666;
+				font-size: 13px;
+				font-weight: bold;
+			}
+			#left1 .small, #left2 .small{
+				position: absolute;
+				top: 35px;
+				left: 65px;
+				font-size: 13px;
+				color: #999;
+			}
+			#right{
+				width: 382px;
+				font-size: 13px;
+				color: #999;	
+			}
+			#right a{
+				color: #999;
+			}
+			#links{
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+			#brand{
+				margin-bottom: 10px;
+			}
+			#hidden{
+				position: absolute;
+				display: none;
+				left: 40%;
+				top: 17%;
+			}
+			#login_web{
+				background: #fff;
+				width: 320px;
+				border: 1px solid gray;
+				
+			}
+			#header{
+				font-size: 16px;
+				color: #666;				
+				height: 35px;
+				line-height: 35px;
+				position: relative;
+				background: #f7f7f7;
+				cursor: move;
+			}
+			#header #logo2{
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				background: url(img/baidu_logo_24_056405eb.png) 0 0 no-repeat;
+				position: absolute;
+				left: 10px;
+			}
+			#header #loginzh{
+				position: absolute;
+				left: 40px;
+				font-weight: bold;
+			}
+			#close{
+				position: absolute;
+				right: 10px;
+				width: 19px;
+				height: 19px;
+				cursor: pointer;
+				background: url(img/pass_login_icons_7241098f.png) -52px -45px no-repeat;
+			}
+			#header  #close:hover{
+				background: url(img/pass_login_icons_7241098f.png) -69px -45px no-repeat;
+			}
+			
+			#messLogin, #zhanghao, #password,#problem,#loginBtn,#zhuce{
+				width: 320px;
+				position: relative;
+			}
+			#cell{
+				width: 15px;
+				height: 15px;
+				background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/smsSwitchPhone_296e835b.png) 0 0 no-repeat;
+				cursor: pointer;
+				position: absolute;
+				right: 90px;
+				top: 5px;
+			}
+			#msn{
+				color: #666;
+				text-decoration: none;
+				font-size: 14px;
+				position: absolute;
+				right: 10px;
+				display: inline-block;
+				height: 15px;
+				line-height: 15px;
+				cursor: pointer;
+				top: 5px;
+			}
+			#msn:hover{
+				color: #2e7fd8;
+				text-decoration: underline;
+			}
+			#zhanghao{
+				top: 30px;
+				left: 10px;
+			}
+			#ren, #suo{
+				position: absolute;
+				left: 10px;	
+				top: 7px;
+			}
+			#zh, #psd{
+				width: 210px;
+				padding: 0 40px;
+				height: 33px;
+			}
+			.cancell{
+				width: 10px;
+				height: 10px;
+				background: url(img/pass_login_icons_7241098f.png) -3px -3px no-repeat;
+				position: absolute;
+				right: 35px;
+				top: 15px;
+			}
+			.cancell:hover{
+				background: url(img/pass_login_icons_7241098f.png) -3px -19px no-repeat;
+			}
+			#password,#problem{
+				top: 35px;
+				left: 10px;
+			}
+			#problem{
+				font-size: 13px;
+				color: #666;
+			}
+			#problem a{
+				color: #2e7fd8;
+				text-decoration: none;
+				position: absolute;
+				right: 30px;
+			}
+			#problem a:hover{
+				text-decoration: underline;
+			}
+			#loginBtn{
+				width: 292px;
+				height: 40px;
+				text-align: center;
+				color: #FFFFFF;
+				background: #4490f7;
+				left: 10px;
+				top: 50px;
+				font-size: 17px;
+				border: none;
+				cursor: pointer;	
+			}
+			#zhuce a{
+				color: #2e7fd8;
+				font-size:13px;
+				position: absolute;
+				right: 30px;
+				top: 60px;
+				text-decoration: none;
+				cursor: pointer;	
+				
+			}
+			#zhuce a:hover{
+				text-decoration: underline;
+			}
+			#coperate{
+				width: 290px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			#follow{
+				position: relative;
+				top: 130px;
+				font-size: 13px;
+				border-top: 1px solid #eee;
+				height: 10px;
+				padding: 10px 0;
+				color: #666;
+			}
+			#other{
+				width: 320px;
+				position: relative;
+				height: 50px;
+				top: 118px;
+				left: -15px;
+				/*background: red;*/
+			}
+			#qq{
+				width: 25px;
+				height: 25px;
+				background: url(img/pass_login_icons_7241098f.png) -88px 0 no-repeat;
+				position: absolute;
+				bottom: 10px;
+				left: 30px;
+				cursor: pointer;	
+				
+			}
+			#sina{
+				width: 25px;
+				height: 25px;
+				background: url(img/pass_login_icons_7241098f.png) -60px 0 no-repeat;
+				position: absolute;
+				left: 65px;
+				bottom: 10px;
+				cursor: pointer;	
+				
+			}
+			#ma{
+				position: absolute;
+				right: 0;
+				bottom: 10px;
+				width: 40px;
+				height: 40px;
+				cursor: pointer;	
+				
+				background: url(img/pass_login_icons_7241098f.png) -60px -80px no-repeat;
+			}
+			#rightClick{
+				width: 200px;
+				display: none;
+				background: #f4f4f4;
+				border: 1px solid black;
+				font-size: 13px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#rightClick ul li{
+				list-style: none;
+				width: 196px;
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 1px solid #999;
+				
+			}
+			#rightClick ul li:hover{
+				border: 1px solid #4490F7;
+				background: royalblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="nav">
+				<a href="#">糯米</a>
+				<a href="#">新闻</a>
+				<a href="#">hao123</a>
+				<a href="#">地图</a>
+				<a href="#">视频</a>
+				<a href="#">贴吧</a>
+				<a href="#" id="login">登录</a>
+				<a href="#">设置</a>
+				<a href="#" id="more">更多产品</a>
+			</div>
+			
+			<div id="content">
+				<div id="logo">
+					<img src="img/bd_logo1.png"/>	
+				</div>
+				<div id="search">
+					<input type="text" id="searchText" value="" />
+					<span id="camera"></span>
+					<a href="#"><button>百度一下</button></a>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="left1">
+					<img src="img/zbios_62c636fe.png"/>
+					<span id="baiduApp">
+						<div class="big">手机百度</div>
+						<div class="small">快人一步</div>
+					</span>
+				</div>
+				<div id="left2">
+					<img src="img/zbios_62c636fe.png"/>
+					<span id="normiApp">
+						<div class="big">百度糯米</div>
+						<div class="small">一元大餐</div>
+					</span>
+				</div>
+				<div id="right">
+					<div id="links">
+						<a href="#">把百度设为主页</a>
+						<a href="#">关于百度</a>
+						<a href="#">About Baidu</a>
+					</div>
+					<div id="brand">
+						<span id="">©2016 Baidu </span>
+						<a href="#">使用百度前必读</a>
+						<a href="#">意见反馈</a>
+						<span id="">京ICP证030173号 </span>
+						<img src="img/截图 2016-07-18 18.22.53.png"/>
+					</div>
+					<div id="safe">
+						<img src="img/截图 2016-07-18 18.23.48.png"/>
+						<span id="">京公网安备11000002000001号</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="hidden">
+			<div id="login_web">
+				<div id="header">
+					<span id="logo2"></span>
+					<span id="loginzh">登录百度帐号</span>
+					<span id="close"></span>
+				</div>
+				<div id="content">
+					<div id="messLogin">
+						<span id="cell"></span>
+						<a href="#" id="msn">短信快捷登录</a>
+					</div>
+					<div id="zhanghao">
+						<img id='ren' src="img/截图 2016-07-19 09.04.39.png"/>
+						<input type="text" id="zh" value="" placeholder="手机/邮箱/用户名"/>
+						<span class="cancell"></span>
+						
+					</div>
+					<div id="password">
+						<img src="img/截图 2016-07-19 13.04.30.png" id="suo"/>
+						<input type="text" id="psd" value="" placeholder="密码"/>
+						<span class="cancell"></span>
+					</div>
+					<div id="problem">
+						<input type="checkbox" id="next" value="" />
+						<span id="">下次自动登录</span>
+						<a href="#">登录遇到问题</a>
+					</div>
+					<div >
+						<input id="loginBtn" type="button" id="" value="登录" />
+					</div>
+					<div id="zhuce">
+						<a href="#">立即注册</a>
+					</div>
+				</div>
+				<div id="coperate">
+					<div id="follow">可以使用以下方式登录</div>
+					<div id="other">
+						<span id="qq"></span>
+						<span id="sina"></span>
+						<span id="ma"></span>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+		<div id="rightClick">
+			<ul>
+				<li>将页面另存为(P)...</li>
+				<li>查看背景图像(W)</li>
+				<li>全选(A)</li>
+				<li>查看页面源代码(V)</li>
+				<li>查看页面信息</li>
+				<li>查看页面元素(Q)</li>
+				<li>添加至快捷拨号(Y)</li>
+				<li>使用Firebug查看元素</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var boxDiv = document.getElementById('box');
+		var loginBox = document.getElementById('login');
+		var minLogin = document.getElementById('hidden');
+		var close = document.getElementById('close');
+		var header = document.getElementById('header');
+		var rightClick = document.getElementById('rightClick');
+		var img;
+		loginBox.onclick = function (){
+			minLogin.style.display = 'block';
+			minLogin.style.zIndex = '4';
+			//实现mini框的拖动
+			header.onmousedown = function (e){
+				var evt = e || window.event;
+				
+				var disW = evt.clientX - minLogin.offsetLeft;
+				var disH = evt.clientY - minLogin.offsetTop;
+				
+				document.onmousemove = function (e){
+					var evt = e || window.event;
+					var nowX = evt.clientX - disW;
+					var nowY = evt.clientY - disH;
+
+					if (nowX <= 0) {
+						nowX = 0;
+					} else if (nowX >= (document.documentElement.clientWidth - minLogin.offsetWidth)) {
+						nowX = document.documentElement.clientWidth - minLogin.offsetWidth;
+					}
+					
+					if (nowY <= 0) {
+						nowY = 0;
+					} else if (nowY >= document.documentElement.clientHeight - minLogin.offsetHeight) {
+						nowY = document.documentElement.clientHeight - minLogin.offsetHeight;
+					}
+					
+					minLogin.style.left = nowX + 'px';
+					minLogin.style.top = nowY + 'px';
+				}
+				document.onmouseup = function () {
+					// 清除注册好的移动事件
+					document.onmousemove = null;
+				}
+			}
+			
+			img = document.createElement('img');
+			img.src = 'img/QQ图片20160719181658.jpg';
+			img.style.opacity = '0.4';
+			img.style.width = '100%';
+			img.style.position = 'absolute';
+			img.style.top = '-1000px'
+		
+			boxDiv.appendChild(img);
+		}
+		close.onclick = function (){
+			minLogin.style.display = 'none';
+			boxDiv.removeChild(img);
+		}
+		
+		
+			document.oncontextmenu = function (e) {
+				rightClick.style.display = 'block';
+				
+				var evt = e || window.event;
+				
+				rightClick.style.left = evt.clientX + 'px';
+				rightClick.style.top = evt.clientY + 'px';
+				return false;
+			}
+
+		document.onmousedown = function (){
+			rightClick.style.display = 'none';
+		}
+	</script>
+</html>
